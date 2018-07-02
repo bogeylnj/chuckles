@@ -1,0 +1,13 @@
+body {border:1px solid white; width:1024; font-family:monospace;background-color:black;}
+.list {position:relative; width:150px; margin: 20px 0px 0px 20px; padding:15px; float:left; background-color:#f3f3f3; overflow:hidden;}
+h4 {margin-left:15px; margin-bottom: 7px;}
+ol {margin-left:0; padding-left:20px;}
+li {margin:0px 0px 2px; padding-right:10px;}
+li.first {list-style-image: url("http://icons.iconarchive.com/icons/google/noto-emoji-activities/16/52727-1st-place-medal-icon.png")}
+li.second {list-style-image: url("http://icons.iconarchive.com/icons/google/noto-emoji-activities/16/52728-2nd-place-medal-icon.png")}
+li.third {list-style-image: url("http://icons.iconarchive.com/icons/google/noto-emoji-activities/16/52729-3rd-place-medal-icon.png")}
+li.up {background: url("https://upload.wikimedia.org/wikipedia/commons/8/8b/Green_Arrow_Up_Darker.svg") no-repeat right; background-size: 14px 14px;}
+li.down {background: url("https://upload.wikimedia.org/wikipedia/commons/0/04/Red_Arrow_Down.svg") no-repeat right; background-size: 14px 14px;}
+
+.icon {position:absolute; top:-10px; left:120px; opacity:.20}
+.red {color:red;}	
