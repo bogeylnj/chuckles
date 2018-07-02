@@ -1,9 +1,11 @@
 var mkdirp = require("mkdirp");
 var fs = require("fs-extra");
+const month = ['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER'];
 console.log("process.argv", process.argv);
 const filePath = process.argv[2];
 const serverName = process.argv[3];
 const serverImage = process.argv[4];
+
 
 init()
 	.then(readData) // 
@@ -44,7 +46,7 @@ function getTops(data, num=10) {
 }
 
 function buildDom(tops) {
-	return header() + tops.map(getDiv) + footer();
+	return header(serverName, serverImage) + tops.map(getDiv) + footer();
 }
 
 function writeHtml(html) {
@@ -54,9 +56,9 @@ function writeHtml(html) {
 }
 
 // html
-function header(serverName, serverImage="images/Mewtwo.png") {
+function header(serverName="Team F'ing Valor MKE", serverImage="images/Mewtwo.png") {
 	return "<html><head><link rel=\"stylesheet\" type=\"text/css\" href=\"tops.css\" /></head><body>"
-		+ "<header><img src=\""+serverImage+"\" /> Team F'ing Value MKE - JULY</header>";
+		+ "<header><img src=\""+serverImage+"\" /> "+serverName+" - "+(month[new Date().getMonth()])+"</header>";
 }
 function getDiv(list) {
 	return "<div class=\"list\"><img class=\"icon\" src=\"images/ico_"+list.name+".png\" />"  // Badge_Type_xxxx_01.png
