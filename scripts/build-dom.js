@@ -1,7 +1,7 @@
 var mkdirp = require("mkdirp");
 var fs = require("fs-extra");
 const month = ['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER'];
-const displayTitle = {xp: "Experience",maxedMon: "Maxed Pokemon",_100s: "Total 100%",unique100s: "Unique 100%",_3000: "3000+ CP",jogger: "Jogger",collector: "Collector",scientist: "Scientist",breeder: "Breeder",backpacker: "Backpacker",battleGirl: "Battle Girl",battleLegend: "Battle Legend",champion: "Champion",youngster: "Youngster",berryMaster: "Berry Master",gymLeader: "Gym Leader",fisherman: "Fisherman",aceTrainer: "Ace Trainer",pikachuFan: "Pikachu Fan",unown: "Unown",pokemonRanger: "Pokemon Ranger",shiny: "Unique Shinies",normal: "Normal",fighting: "Fighting",flying: "Flying",poison: "Poison",ground: "Ground",rock: "Rock",bug: "Bug",ghost: "Ghost",steel: "Steel",fire: "Fire",water: "Water",grass: "Grass",electric: "Electric",psychic: "Psychic",ice: "Ice",dragon: "Dragon",dark: "Dark",fairy: "Fairy",goldGym: "Gold Gyms",silverGym: "Silver Gyms",bronzeGym: "Bronze Gyms",noBadge: "No Badge Gyms",totalGyms: "totalGyms",gentleman: "Gentleman",pilot: "Pilot",idol: "Idol"}
+const displayTitle = {xp: "Experience",maxedMon: "Maxed Pokemon",_100s: "Total 100%",unique100s: "Unique 100%",_3000: "3000+ CP",jogger: "Jogger",collector: "Collector",scientist: "Scientist",breeder: "Breeder",backpacker: "Backpacker",battleGirl: "Battle Girl",battleLegend: "Battle Legend",champion: "Champion",youngster: "Youngster",berryMaster: "Berry Master",gymLeader: "Gym Leader",fisherman: "Fisherman",aceTrainer: "Ace Trainer",pikachuFan: "Pikachu Fan",unown: "Unown",pokemonRanger: "Pokemon Ranger",shiny: "Total Shinies",uniqueShinies: "Unique Shinies",lucky: "Lucky", uniqueLucky: "Unique Lucky", normal: "Normal",fighting: "Fighting",flying: "Flying",poison: "Poison",ground: "Ground",rock: "Rock",bug: "Bug",ghost: "Ghost",steel: "Steel",fire: "Fire",water: "Water",grass: "Grass",electric: "Electric",psychic: "Psychic",ice: "Ice",dragon: "Dragon",dark: "Dark",fairy: "Fairy",goldGym: "Gold Gyms",silverGym: "Silver Gyms",bronzeGym: "Bronze Gyms",noBadge: "No Badge Gyms",totalGyms: "Total Gyms",gentleman: "Gentleman",pilot: "Pilot",idol: "Idol", stardust: "Stardust"}
 
 console.log("process.argv", process.argv);
 const filePath = process.argv[2];
@@ -40,7 +40,7 @@ function readData() {
 
 function getTops(data, num=10) {
 	return Object.keys(data.players[0])
-		.filter(k => !k.match(/id|name|team|region|xpPerDay|startDate|lastUpdated|trainerImage|discordImage|kanto|johto|hoenn/))
+		.filter(k => !k.match(/id|name|team|region|xpPerDay|startDate|lastUpdated|trainerImage|discordImage|kanto|johto|hoenn|badges|trainerCode|servers|blockedServers/))
 		.map(k => {
 			data.players.sort((a,b) => b[k] - a[k]);
 			return { name: k, top: [...data.players].slice(0,num).map(p => ({name:p.name, team:p.team, key:[k], value:p[k]}))};
@@ -64,7 +64,7 @@ function header(serverName="Team F'ing Valor MKE", serverImage="images/Mewtwo.pn
 }
 function getDiv(list) {
 	return "<div class=\"list\"><img class=\"icon\" src=\"images/ico_"+list.name+".png\" />"  // Badge_Type_xxxx_01.png
-		+ "<h4>" + displayTitle[list.name] + "</h4><ol>" + list.top.map(getItem).join('') + "</ol></div>";
+		+ "<h4>" + (displayTitle[list.name]?displayTitle[list.name]:list.name) + "</h4><ol>" + list.top.map(getItem).join('') + "</ol></div>";
 }
 
 function getItem(player, i) {
