@@ -1,4 +1,4 @@
-body {/*border:1px solid white; */width:1300px; font-family:monospace; background-color:black;}
+body {/*border:1px solid white; */width:1300px; font-family:monospace; background-color:#333;}
 header {color:white; font-family:arial; font-size:2em;padding: 10px 25px;}
 header img {height:100px;}
 .list {
