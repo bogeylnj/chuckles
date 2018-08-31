@@ -3,14 +3,14 @@ var fs = require("fs-extra");
 const month = ['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER'];
 const displayTitle = {xp: "Experience",maxedMon: "Maxed Pokemon",_100s: "Total 100%",unique100s: "Unique 100%",_3000: "3000+ CP",jogger: "Jogger",collector: "Collector",scientist: "Scientist",breeder: "Breeder",backpacker: "Backpacker",battleGirl: "Battle Girl",battleLegend: "Battle Legend",champion: "Champion",youngster: "Youngster",berryMaster: "Berry Master",gymLeader: "Gym Leader",fisherman: "Fisherman",aceTrainer: "Ace Trainer",pikachuFan: "Pikachu Fan",unown: "Unown",pokemonRanger: "Pokemon Ranger",shiny: "Total Shinies",uniqueShinies: "Unique Shinies",lucky: "Lucky", uniqueLucky: "Unique Lucky", normal: "Normal",fighting: "Fighting",flying: "Flying",poison: "Poison",ground: "Ground",rock: "Rock",bug: "Bug",ghost: "Ghost",steel: "Steel",fire: "Fire",water: "Water",grass: "Grass",electric: "Electric",psychic: "Psychic",ice: "Ice",dragon: "Dragon",dark: "Dark",fairy: "Fairy",goldGym: "Gold Gyms",silverGym: "Silver Gyms",bronzeGym: "Bronze Gyms",noBadge: "No Badge Gyms",totalGyms: "Total Gyms",gentleman: "Gentleman",pilot: "Pilot",idol: "Idol", stardust: "Stardust"}
 
-console.log("process.argv", process.argv);
+//console.log("process.argv", process.argv);
 const filePath = process.argv[2];
 const serverName = process.argv[3];
 const serverImage = process.argv[4];
-
+console.log(`Generating ${serverName}'s Leaderboard design from datafile: ${filePath}...`);
 
 init()
-	.then(readData) // 
+	.then(readData)
 	.then(getTops)
 	//.then(data => { console.log(JSON.stringify(data, null, 2)); return data; })
 	.then(buildDom)
@@ -55,6 +55,7 @@ function writeHtml(html) {
 	fs.writeFileSync("build/tops.html", html);
 	fs.createReadStream('resources/tops.css').pipe(fs.createWriteStream('build/tops.css'));
 	fs.copy('resources/images', 'build/images');
+	console.log("\tImage design completed.");
 }
 
 // html

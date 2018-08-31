@@ -4,8 +4,9 @@ header img {height:100px;}
 .list {
 	position:relative; width:200px; float:left; 
 	margin: 20px 0px 0px 20px; padding:15px;  
-	background-color:#f3f3f3; background: radial-gradient(circle at top right, black, #111, #111, black);
-	border-left: 1px solid lightgray; border-top:1px solid #333; border-bottom: 1px solid lightgray;
+	/* black background-color:#f3f3f3; background: radial-gradient(circle at top right, black, #111, #111, black); */
+	background-color: #333;
+	/*border-left: 1px solid lightgray; border-top:1px solid #333; border-bottom: 1px solid lightgray;*/
 	color:#f8f8f8;
 	overflow:hidden;
 }	

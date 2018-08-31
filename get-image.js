@@ -1,12 +1,4 @@
-const { spawn } = require('child_process');
+const LeaderboardImage = require('./LeaderboardImage');
 
-let child = spawn('npm');
 
-child.stdout.on('data', (data) => {
-  console.log(`child stdout:\n${data}`);
-});
-
-child.stderr.on('data', (data) => {
-  console.error(`child stderr:\n${data}`);
-});
-
+new LeaderboardImage().getImage("x", 1, 2);
