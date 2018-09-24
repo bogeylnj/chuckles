@@ -1,5 +1,8 @@
+# importing into app (see `get-image.js`)
 
+- or -
 
+# Running from command line
 ## Build HTML page from data set
 
 > `npm run build-dom <dataPath> <serverName> <serverImage>`
@@ -10,3 +13,6 @@
 ## Then, render the HTML page as a PNG
 
 > `npm run render`
+
+
+

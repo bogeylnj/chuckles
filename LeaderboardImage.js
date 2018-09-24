@@ -5,16 +5,23 @@ class LeaderboardImage {
 		
 	}
 	getImage(dataFilePath, serverName, imgFilePath) {
-		console.log(1);
+		console.log("Generating %s's Leaderboard image\n\tbuilding layout using data[%s] and image[%s]...", serverName, dataFilePath, imgFilePath);
 		let cmd = spawnSync('cmd', ['/c', 'npm', 'run', 'build-dom', dataFilePath, serverName, imgFilePath]);
-		console.log(2);
-		if(cmd.stderr) { console.error("unexpected error: " + cmd.stderr); }
-		/*console.log(`child stdout:\n${cmd.stdout}`);console.error(`child stderr:\n${cmd.stderr}`);*/
 
-		console.log(3);
-		cmd = spawnSync('cmd', ['/c', 'npm', 'run', 'render']);
-		console.log(4);
-		/*console.log(`child stdout:\n${cmd.stdout}`);console.error(`child stderr:\n${cmd.stderr}`);*/
+		if(!cmd.stderr.data) {
+			console.log("\trendering image...");
+			cmd = spawnSync('cmd', ['/c', 'npm', 'run', 'render']);
+			
+			if(cmd.stderr.data) { 
+				console.error("unexpected rendering error: " + cmd.stderr);
+			}
+			else {
+				console.log("\tCompleted rendering %s's leaderboard image.", serverName);
+			}
+		}
+		else {
+			console.error("unexpected build error: [" + (JSON.stringify(cmd) )+ "]"); 
+		}
 	}
 }
 
