@@ -1,0 +1,27 @@
+body {/*border:1px solid white; */width:1300px; font-family:monospace; background-color:#333;}
+header {color:white; font-family:arial; font-size:2em;padding: 10px 25px;}
+header img {height:100px;}
+.list {
+	position:relative; width:200px; float:left; 
+	margin: 20px 0px 0px 20px; padding:15px;  
+	/* black background-color:#f3f3f3; background: radial-gradient(circle at top right, black, #111, #111, black); */
+	background-color: #333;
+	/*border-left: 1px solid lightgray; border-top:1px solid #333; border-bottom: 1px solid lightgray;*/
+	color:#f8f8f8;
+	overflow:hidden;
+}	
+h4 {margin-left:15px; margin-bottom: 7px;}
+ol {margin-left:0; padding-left:20px;}
+li {margin:0px 0px 0px;position:relative;}
+li.first {list-style-image: url("http://icons.iconarchive.com/icons/google/noto-emoji-activities/16/52727-1st-place-medal-icon.png")}
+li.second {list-style-image: url("http://icons.iconarchive.com/icons/google/noto-emoji-activities/16/52728-2nd-place-medal-icon.png")}
+li.third {list-style-image: url("http://icons.iconarchive.com/icons/google/noto-emoji-activities/16/52729-3rd-place-medal-icon.png")}
+li.up {background: url("https://upload.wikimedia.org/wikipedia/commons/8/8b/Green_Arrow_Up_Darker.svg") no-repeat right; background-size: 12px 12px;}
+li.down {background: url("https://upload.wikimedia.org/wikipedia/commons/0/04/Red_Arrow_Down.svg") no-repeat right; background-size: 12px 12px;}
+li span.stat {display:inline-block; position:absolute; bottom:0; right:0; vertical-align:bottom; font-size:.8em; color:#999;}
+.icon {position:absolute; max-width:72px; height:auto; top:-10px; left:175px; opacity:.50}
+.valor {color:#f88;}
+.mystic {color:#9bf;}
+.instinct {color:#cc0;}
+.longName {font-size:.8em;}
+.superLongName {font-size:.6em;}     
