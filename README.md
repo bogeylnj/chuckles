@@ -1,6 +1,11 @@
 # importing into app (see `get-image.js`)
+> Run example `node get-image.js`
+-or-
+```
+const LeaderboardImage = require('./LeaderboardImage');
 
-- or -
+new LeaderboardImage().getImage("data/june-map.json", "Sample Header", "<PathToImage>");
+```
 
 # Running from command line
 ## Build HTML page from data set
