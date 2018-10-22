@@ -53,7 +53,9 @@ function getTops(data, num=10) {
 }
 
 function buildDom(data) {
-	return header(serverName, serverImage) + data.tops.map(l => getDiv(l, data.statsConfig[l.name].label)) + footer();
+	return header(serverName, serverImage) 
+			+ data.tops.map(l => getDiv(l, (data.statsConfig[l.name] ? data.statsConfig[l.name].label : l.name))) 
+			+ footer();
 }
 
 function writeHtml(html) {
@@ -66,11 +68,11 @@ function writeHtml(html) {
 // html
 function header(serverName="Team F'ing Valor MKE", serverImage="images/Mewtwo.png") {
 	return "<html><head><link rel=\"stylesheet\" type=\"text/css\" href=\"tops.css\" /></head><body>"
-		+ "<header><img src=\""+serverImage+"\" /> "+serverName+" - "+(month[new Date().getMonth()])+"</header>";
+		+ "<header><img src=\""+serverImage+"\" /> "+serverName+"</header>";
 }
 function getDiv(list, displayTitle) {
 	return "<div class=\"list\"><img class=\"icon\" src=\"images/ico_"+list.name+".png\" />"  // Badge_Type_xxxx_01.png
-		+ "<h4>" + (displayTitle?displayTitle:list.name) + "</h4><ol>" + list.top.map(getItem).join('') + "</ol></div>";
+		+ "<h4>" + displayTitle + "</h4><ol>" + list.top.map(getItem).join('') + "</ol></div>";
 }
 
 function getItem(player, i) {

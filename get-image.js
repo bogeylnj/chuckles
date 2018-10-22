@@ -1,6 +1,6 @@
 const LeaderboardImage = require('./LeaderboardImage');
 
-new LeaderboardImage().getImage("data/june-map.json", "Sample Header", "<PathToImage>");
+new LeaderboardImage().getImage("data/serverData.json", "Very Long Title, Very long Title to go full width", "images/mewtwo.jpg");
 
 
 /* example output
