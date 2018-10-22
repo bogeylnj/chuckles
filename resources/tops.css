@@ -5,7 +5,7 @@ body {/*border:1px solid white; */
 	background:#211 url('../resources/images/alolan2018.jpg') no-repeat; 
 	background-size:contain; /* cover, covers whole box, contain ensures whole image is displayed (should be bound by width here) */
 }
-header {color:white; font-family:arial; font-size:2.5em;padding: 10px 25px;}
+header {color:white; font-family:arial; font-size:2.5em;padding: 10px 25px; text-shadow: 2px 2px 4px #000;}
 header img {height:100px;}
 .list {
 	position:relative; width:200px; float:left; 

@@ -20,4 +20,5 @@ new LeaderboardImage().getImage("data/june-map.json", "Sample Header", "<PathToI
 > `npm run render`
 
 
-
+## Stat category labels and visibility now configurable
+> `resources/stats.confg` contains a json map defining `hidden` data and `labels` to use for Title text
