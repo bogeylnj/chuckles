@@ -5,8 +5,10 @@
   "dependencies": {
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "merge": ">=1.2.1"
   },
+  "merge-dependency-comment": "// added merge because `jest` uses it and had vlnerability, could remove if upgrade react and uses merge>=1.2.1",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
