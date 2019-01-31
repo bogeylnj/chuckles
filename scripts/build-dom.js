@@ -54,7 +54,7 @@ function getTops(data, num=10) {
 
 function buildDom(data) {
 	return header(serverName, serverImage) 
-			+ data.tops.map(l => getDiv(l, (data.statsConfig[l.name] ? data.statsConfig[l.name].label : l.name))) 
+			+ data.tops.map(l => getDiv(l, (data.statsConfig[l.name] ? data.statsConfig[l.name].label : l.name))).join("")
 			+ footer();
 }
 
